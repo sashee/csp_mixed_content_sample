@@ -5,7 +5,7 @@ const express = require('express');
 
 const httpApp = express();
 
-const httpServer = http.createServer(httpApp).listen(8080);
+const httpServer = http.createServer(httpApp).listen(80);
 
 (async () => {
 	const {key, cert} = await (async () => {
@@ -22,7 +22,7 @@ const httpServer = http.createServer(httpApp).listen(8080);
 
 	const httpsApp = express()
 
-	const httpsServer = https.createServer({key, cert}, httpsApp).listen(8443)
+	const httpsServer = https.createServer({key, cert}, httpsApp).listen(443)
 
 	const initApp = (app) => {
 		app.use((req, res, next) => {
